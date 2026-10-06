@@ -1,0 +1,364 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+
+    min-height: 100vh;
+
+    font-family: "Kanit", sans-serif;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+
+    /* พื้นหลังสีเหลืองอ่อน */
+
+    background:
+
+        radial-gradient(circle at 20% 20%,
+            rgba(255, 255, 255, 0.9),
+            transparent 35%),
+
+        radial-gradient(circle at 80% 80%,
+            rgba(255, 255, 255, 0.7),
+            transparent 35%),
+
+        linear-gradient(135deg,
+            #fffde7,
+            #fff8c6,
+            #fff1a8);
+}
+
+
+/* ==========================================
+   LOGOUT CARD
+========================================== */
+
+.logout-card {
+
+    width: 100%;
+
+    max-width: 460px;
+
+    padding: 45px 40px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+
+    /* Glassmorphism */
+
+    background:
+        rgba(255, 255, 255, 0.65);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+
+    border:
+        1px solid rgba(255, 255, 255, 0.8);
+
+
+    box-shadow:
+
+        0 25px 60px rgba(80, 70, 20, 0.15);
+
+
+    animation:
+        cardShow 0.6s ease;
+}
+
+
+/* ==========================================
+   SUCCESS ICON
+========================================== */
+
+.success-icon {
+
+    width: 95px;
+
+    height: 95px;
+
+    margin:
+        0 auto 25px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 42px;
+
+
+    background:
+
+        linear-gradient(135deg,
+            #11998e,
+            #38ef7d);
+
+
+    box-shadow:
+
+        0 15px 30px rgba(17, 153, 142, 0.30);
+
+
+    animation:
+        iconShow 0.7s ease;
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.logout-card h1 {
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+    color: #333;
+
+    margin-bottom: 12px;
+}
+
+
+/* ==========================================
+   MESSAGE
+========================================== */
+
+.message {
+
+    font-size: 17px;
+
+    color: #555;
+
+    line-height: 1.7;
+
+    margin-bottom: 8px;
+}
+
+
+/* ==========================================
+   REDIRECT MESSAGE
+========================================== */
+
+.redirect-message {
+
+    font-size: 14px;
+
+    color: #888;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   COUNTDOWN
+========================================== */
+
+.countdown {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background: #b52b2b;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    margin-left: 5px;
+}
+
+
+/* ==========================================
+   PROGRESS BAR
+========================================== */
+
+.progress-container {
+
+    width: 100%;
+
+    height: 6px;
+
+    background:
+        rgba(0, 0, 0, 0.08);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+
+    background:
+
+        linear-gradient(90deg,
+            #11998e,
+            #38ef7d);
+
+
+    animation:
+        countdown 3s linear forwards;
+}
+
+
+/* ==========================================
+   CARD ANIMATION
+========================================== */
+
+@keyframes cardShow {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px) scale(0.95);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+
+/* ==========================================
+   ICON ANIMATION
+========================================== */
+
+@keyframes iconShow {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.5);
+    }
+
+    70% {
+
+        transform:
+            scale(1.08);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* ==========================================
+   PROGRESS ANIMATION
+========================================== */
+
+@keyframes countdown {
+
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+
+/* ==========================================
+   RESPONSIVE MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+    .logout-card {
+
+        padding:
+            35px 25px;
+
+        border-radius:
+            22px;
+    }
+
+
+    .success-icon {
+
+        width: 80px;
+
+        height: 80px;
+
+        font-size: 34px;
+    }
+
+
+    .logout-card h1 {
+
+        font-size: 24px;
+    }
+
+
+    .message {
+
+        font-size: 15px;
+    }
+
+
+    .redirect-message {
+
+        font-size: 13px;
+    }
+}
