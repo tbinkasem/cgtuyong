@@ -1,0 +1,309 @@
+/* ตั้งค่าพื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Sarabun", "Tahoma", sans-serif;
+    background: linear-gradient(135deg,
+            #e0f2fe 0%,
+            #eff6ff 50%,
+            #dbeafe 100%);
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+/* จัดวางการ์ดไว้กึ่งกลางหน้าจอ */
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 16px;
+}
+
+/* การ์ดแบบโมเดิร์น */
+.form-card {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 22px;
+    border: 1px solid #dbeafe;
+    box-shadow: 0 15px 45px rgba(30, 64, 175, 0.12);
+}
+
+/* ส่วนหัวการ์ด */
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    color: #1677e8;
+    font-size: 34px;
+    border-radius: 18px;
+}
+
+.form-header h1 {
+    font-size: 23px;
+    line-height: 1.5;
+    color: #174ea6;
+    margin-bottom: 8px;
+}
+
+.form-header p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* กลุ่มช่องกรอกข้อมูล */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-group input,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background: #f8fbff;
+    color: #1e293b;
+    font-family: inherit;
+    font-size: 15px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input {
+    min-height: 48px;
+}
+
+.form-group textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+/* ปุ่มดำเนินการ */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    min-height: 49px;
+    padding: 13px 18px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-submit {
+    border: none;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+    box-shadow: 0 5px 14px rgba(37, 99, 235, 0.2);
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #1d4ed8, #0284c7);
+    transform: translateY(-1px);
+}
+
+.btn-back {
+    border: 1px solid #93c5fd;
+    background: #ffffff;
+    color: #2563eb;
+}
+
+.btn-back:hover {
+    background: #eff6ff;
+    border-color: #3b82f6;
+}
+
+/* ส่วนท้ายการ์ด */
+.form-footer {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* รองรับโทรศัพท์มือถือ */
+@media (max-width: 480px) {
+
+    /* จัดการ์ดให้อยู่กึ่งกลางและเว้นขอบ 100px */
+    .page-container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 100px;
+    }
+
+
+    /* การ์ดขยายความกว้างตามพื้นที่หน้าจอ */
+    .form-card {
+        width: 100%;
+        max-width: none;
+        background: #ffffff;
+        padding: 35px;
+        border-radius: 22px;
+        border: 1px solid #dbeafe;
+        box-shadow: 0 15px 45px rgba(30, 64, 175, 0.12);
+    }
+
+    .form-header h1 {
+        font-size: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+    }
+
+    .btn {
+        min-height: 48px;
+    }
+}
+
+
+
+/* จัดรายการ Checkbox แถวละ 3 รายการ */
+.needs-checkbox {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* รูปแบบรายการ Checkbox */
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 14px;
+    background: #f8fbff;
+    border: 1px solid #dbeafe;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 0;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-height: auto;
+    margin: 0;
+    flex-shrink: 0;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+.checkbox-item span {
+    color: #334155;
+    font-size: 14px;
+    font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+.checkbox-item:hover {
+    background: #eff6ff;
+    border-color: #60a5fa;
+}
+
+.checkbox-item:has(input:checked) {
+    background: #eff6ff;
+    border-color: #3b82f6;
+}
+
+/* แท็บเล็ต: แถวละ 2 รายการ */
+@media (max-width: 768px) {
+    .needs-checkbox {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* โทรศัพท์มือถือ: แถวละ 1 รายการ */
+@media (max-width: 480px) {
+    .needs-checkbox {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* รายการอื่น ๆ */
+.other-checkbox {
+    flex-wrap: wrap;
+}
+
+.other-needs-input {
+    display: none !important;
+    flex: 1 1 100%;
+    width: 100% !important;
+    min-width: 0;
+    min-height: 40px !important;
+    padding: 9px 11px !important;
+    border: 1px solid #93c5fd !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    font-family: inherit;
+    font-size: 14px !important;
+}
+
+/* แสดงช่องกรอกเมื่อเลือกอื่น ๆ */
+.other-checkbox:has(#other_needs_check:checked)
+.other-needs-input {
+    display: block !important;
+}
+
+/* เน้นกรอบเมื่อเลือกรายการ */
+.other-checkbox:has(#other_needs_check:checked) {
+    background: #eff6ff;
+    border-color: #3b82f6;
+}
