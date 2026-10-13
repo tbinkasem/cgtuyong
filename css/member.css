@@ -1,0 +1,155 @@
+/* ตั้งค่าพื้นฐาน */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* พื้นหลังและจัดการ์ดไว้กลางหน้า */
+body {
+    font-family: "Tahoma", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: linear-gradient(135deg, #e8f5e9, #f4f7f6);
+}
+
+/* กล่องฟอร์ม */
+.form-card {
+    width: 100%;
+    max-width: 540px;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
+}
+
+/* ส่วนหัว */
+.form-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.form-header .icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e8f5e9;
+    color: #218838;
+    font-size: 30px;
+}
+
+.form-header h2 {
+    color: #246b45;
+    font-size: 25px;
+    margin-bottom: 9px;
+}
+
+.form-header p {
+    color: #777777;
+    font-size: 14px;
+}
+
+/* ช่องกรอกข้อมูล */
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333333;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d5ded8;
+    border-radius: 9px;
+    background: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* เอฟเฟกต์เมื่อเลือกช่องกรอกข้อมูล */
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #28a05b;
+    box-shadow: 0 0 0 3px rgba(40, 160, 91, 0.12);
+}
+
+/* เครื่องหมายช่องที่จำเป็นต้องกรอก */
+.required {
+    color: #dc3545;
+}
+
+/* กลุ่มปุ่ม */
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+/* รูปแบบปุ่มร่วม */
+.btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 16px;
+    border: none;
+    border-radius: 9px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* ปุ่มส่งข้อมูล */
+.btn-submit {
+    background: #218838;
+}
+
+.btn-submit:hover {
+    background: #17692a;
+    transform: translateY(-2px);
+}
+
+/* ปุ่มกลับหน้าหลัก */
+.btn-home {
+    background: #64748b;
+}
+
+.btn-home:hover {
+    background: #475569;
+    transform: translateY(-2px);
+}
+
+/* รองรับโทรศัพท์มือถือ */
+@media (max-width: 480px) {
+    .form-card {
+        padding: 25px 20px;
+    }
+
+    .form-header h2 {
+        font-size: 22px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}

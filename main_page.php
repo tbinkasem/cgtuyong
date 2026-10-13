@@ -2,6 +2,15 @@
 
     session_start();
     $user = $_SESSION["FullName"];
+    $idu = $_SESSION["idu"];
+    $rol = $_SESSION["rol"];
+
+    if($rol != "users"){
+        session_start();
+        $_SESSION = array();
+        session_destroy();
+        header("location: index.html");
+    }
 
 ?>
 <!DOCTYPE html>
@@ -66,7 +75,7 @@
         <!-- ================= MENU ================= -->
         <section class="menu-grid">
             <!-- 1. บัญชีผู้ใช้งาน -->
-            <a href="member.php"
+            <a href="member.html"
                 class="menu-card menu-green">
                 <div class="menu-icon">
                     <i class="fa-solid fa-users"></i>

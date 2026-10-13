@@ -16,9 +16,23 @@
                 echo "<h2 style='text-align: center; color: red; margin-top: 10%;'>บัญชีผู้ใช้งาน หรือ รหัสผ่าน ไม่ถูกต้อง</h2>";
                 echo "<meta http-equiv='refresh' content='3; url=index.html'>";
         }else{
+        
                 $_SESSION["UserName"] = $objResult["UserName"];
                 $_SESSION["FullName"] = $objResult["FullName"];
+
+                if($objResult["Role"] == "admin"){
+
+                $_SESSION["rol"] = $objResult["Role"];
+                header("location: admin_page.php");  
+
+                }else{
+                        
+                $_SESSION["idu"] = $objResult["iduser"];
+                $_SESSION["rol"] = $objResult["Role"];
                 header("location: main_page.php");
+
+                }
+
         }
         mysqli_close($conn);
 ?>
